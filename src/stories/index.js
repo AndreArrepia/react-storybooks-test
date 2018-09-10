@@ -3,6 +3,8 @@ import React from "react";
 import { storiesOf, addDecorator } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
+import { Provider } from "react-fela";
+import { createRenderer } from "fela";
 
 import { Button, Welcome } from "@storybook/react/demo";
 import Menu from "../components/presentation/menu/Menu";
@@ -24,7 +26,13 @@ storiesOf("Button", module)
   ));
 
 storiesOf("Menu", module)
-  .add("default", () => <Menu />)
+  .addDecorator(story => {
+    const renderer = createRenderer();
+    return <Provider renderer={renderer}>{story()}</Provider>;
+  })
+  .add("default", () => {
+    return <Menu />;
+  })
   .add("custom title", () => <Menu title="Custom title" />)
   .add("with menus", () => (
     <Menu
