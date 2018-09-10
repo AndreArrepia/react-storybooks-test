@@ -7,7 +7,6 @@ class Menu extends Component {
   constructor() {
     super();
     this.buildMenus = this.buildMenus.bind(this);
-    this.sum = this.sum.bind(this);
   }
 
   buildMenus(items) {
