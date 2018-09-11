@@ -8,6 +8,7 @@ import { createRenderer } from "fela";
 
 import { Button, Welcome } from "@storybook/react/demo";
 import Menu from "../components/presentation/menu/Menu";
+import MenuContainer from "../components/containers/MenuContainer";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -36,6 +37,16 @@ storiesOf("Menu", module)
   .add("custom title", () => <Menu title="Custom title" />)
   .add("with menus", () => (
     <Menu
+      menus={[
+        { itemName: "Item 1" },
+        { itemName: "Item 2" },
+        { itemName: "Item 3" }
+      ]}
+    />
+  ))
+  .add("teste animatiopn", () => (
+    <MenuContainer
+      title="Custom title"
       menus={[
         { itemName: "Item 1" },
         { itemName: "Item 2" },
