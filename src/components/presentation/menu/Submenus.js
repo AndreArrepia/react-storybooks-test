@@ -5,31 +5,71 @@ import { createComponent } from "react-fela";
 class Submenus extends Component {
   constructor() {
     super();
+
+    this.state = {
+      localState: false
+    };
+
+    this.buildSubMenus = this.buildSubMenus.bind(this);
+  }
+
+  componentWillMount() {
+    console.log("Will mount again 2");
   }
 
   componentDidMount() {
     if (this.props.hovered === true) {
       setTimeout(() => {
         document.querySelector(".Submenus-wrapper").classList.add("Open");
-      }, 100);
+      }, 0);
     } else {
       document.querySelector(".Submenus-wrapper").classList.add("Open");
       setTimeout(() => {
         document.querySelector(".Submenus-wrapper").classList.remove("Open");
-      }, 100);
+      }, 0);
     }
   }
 
+  componentWillUpdate() {
+    console.log("UPDATED 2");
+  }
+
+  componentWillUnmount() {
+    console.log("Unmounted 2");
+  }
+
+  buildSubMenus(subMenu, key) {
+    return <li key={key}>{subMenu.title}</li>;
+  }
+
   render() {
+    const rule = () => ({
+      "> ul": {
+        listStyleType: "none",
+        color: "white",
+        borderRight: "1px solid white",
+        margin: "10px 0",
+        maxWidth: "25vh",
+        height: "calc(100% - 20px)",
+
+        "> li": {
+          textTransform: "uppercase",
+          padding: "20px 0",
+          cursor: "pointer"
+        }
+      }
+    });
+
+    const SubMenuWrapper = createComponent(rule, "div");
+
     return (
-      <div className="Submenus-wrapper">
+      <SubMenuWrapper className="Submenus-wrapper">
         <ul>
-          <li>Submenu 1</li>
-          <li>Submenu 2</li>
-          <li>Submenu 3</li>
-          <li>Submenu 4</li>
+          {this.props.subMenustoRender.map((singleSubMenu, index) =>
+            this.buildSubMenus(singleSubMenu, index)
+          )}
         </ul>
-      </div>
+      </SubMenuWrapper>
     );
   }
 }

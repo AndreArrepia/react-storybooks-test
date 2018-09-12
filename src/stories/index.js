@@ -32,11 +32,11 @@ storiesOf("Menu", module)
     return <Provider renderer={renderer}>{story()}</Provider>;
   })
   .add("default", () => {
-    return <Menu />;
+    return <MenuContainer />;
   })
-  .add("custom title", () => <Menu title="Custom title" />)
+  .add("custom title", () => <MenuContainer title="Custom title" />)
   .add("with menus", () => (
-    <Menu
+    <MenuContainer
       menus={[
         { itemName: "Item 1" },
         { itemName: "Item 2" },
@@ -44,11 +44,27 @@ storiesOf("Menu", module)
       ]}
     />
   ))
-  .add("teste animatiopn", () => (
+  .add("with menus and subMenus", () => (
     <MenuContainer
       title="Custom title"
       menus={[
-        { itemName: "Item 1" },
+        {
+          itemName: "Item 1",
+          subItems: [
+            {
+              title: "Sneakers",
+              link: "/sneakers"
+            },
+            {
+              title: "Boots",
+              link: "/boots"
+            },
+            {
+              title: "Pumps",
+              link: "/pumps"
+            }
+          ]
+        },
         { itemName: "Item 2" },
         { itemName: "Item 3" }
       ]}

@@ -8,26 +8,41 @@ class MenuContainer extends Component {
     this.changeMenuState = this.changeMenuState.bind(this);
 
     this.state = {
-      hovered: false
+      hovered: false,
+      categoryName: undefined
     };
   }
 
-  changeMenuState() {
+  componentWillMount() {
+    console.log("Will mount again");
+  }
+
+  componentWillUpdate() {
+    console.log("UPDATED");
+  }
+
+  componentDidMount() {
+    console.log("Did mount");
+  }
+
+  componentWillUnmount() {
+    console.log("Unmounted");
+  }
+
+  changeMenuState(categoryName) {
     this.setState({
-      hovered: !this.state.hovered
+      hovered: !this.state.hovered,
+      categoryName: !this.state.hovered === true ? categoryName : undefined
     });
   }
 
   render() {
     return (
       <Menu
-        menus={[
-          { itemName: "Item 1" },
-          { itemName: "Item 2" },
-          { itemName: "Item 3" }
-        ]}
+        menus={this.props.menus}
         changeMenuState={this.changeMenuState}
         hovered={this.state.hovered}
+        categoryName={this.state.categoryName}
       />
     );
   }

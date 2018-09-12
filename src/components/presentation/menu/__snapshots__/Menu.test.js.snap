@@ -2,74 +2,127 @@
 
 exports[`Menu Renders Without title and Menu Items 1`] = `
 <header
-  className="Menu"
+  className="Menu a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp"
 >
-  <h1>
-    Hello World
-  </h1>
+  <div
+    className="Menu-Shadow-Wrappper"
+  >
+    <h1>
+      Hello World
+    </h1>
+  </div>
 </header>
 `;
 
 exports[`Menu Renders with title and Menu Items 1`] = `
 <header
-  className="Menu"
+  className="Menu a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp"
 >
-  <h1>
-    Custom title
-  </h1>
-  <ul>
-    <li>
-       
-      Item 1
-       
-    </li>
-    <li>
-       
-      Item 2
-       
-    </li>
-    <li>
-       
-      Item 3
-       
-    </li>
-  </ul>
+  <div
+    className="Menu-Shadow-Wrappper"
+  >
+    <h1>
+      Custom title
+    </h1>
+    <nav>
+      <ul>
+        <a
+          onClick={[Function]}
+        >
+          Item 1
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          Item 2
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          Item 3
+        </a>
+      </ul>
+    </nav>
+  </div>
+</header>
+`;
+
+exports[`Menu Renders with title and Menu Items and SubItems 1`] = `
+<header
+  className="Menu a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp"
+>
+  <div
+    className="Menu-Shadow-Wrappper"
+  >
+    <h1>
+      Custom title
+    </h1>
+    <nav>
+      <ul>
+        <li
+          onClick={[Function]}
+        >
+          Item 1
+        </li>
+        <a
+          onClick={[Function]}
+        >
+          Item 2
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          Item 3
+        </a>
+      </ul>
+    </nav>
+  </div>
 </header>
 `;
 
 exports[`Menu Renders with title and without Menu Items 1`] = `
 <header
-  className="Menu"
+  className="Menu a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp"
 >
-  <h1>
-    Custom title
-  </h1>
+  <div
+    className="Menu-Shadow-Wrappper"
+  >
+    <h1>
+      Custom title
+    </h1>
+  </div>
 </header>
 `;
 
 exports[`Menu Renders without title and with Menu Items 1`] = `
 <header
-  className="Menu"
+  className="Menu a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az ba bb bc bd be bf bg bh bi bj bk bl bm bn bo bp"
 >
-  <h1>
-    Hello World
-  </h1>
-  <ul>
-    <li>
-       
-      Item 1
-       
-    </li>
-    <li>
-       
-      Item 2
-       
-    </li>
-    <li>
-       
-      Item 3
-       
-    </li>
-  </ul>
+  <div
+    className="Menu-Shadow-Wrappper"
+  >
+    <h1>
+      Hello World
+    </h1>
+    <nav>
+      <ul>
+        <a
+          onClick={[Function]}
+        >
+          Item 1
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          Item 2
+        </a>
+        <a
+          onClick={[Function]}
+        >
+          Item 3
+        </a>
+      </ul>
+    </nav>
+  </div>
 </header>
 `;
