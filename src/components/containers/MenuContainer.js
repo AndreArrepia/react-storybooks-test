@@ -39,6 +39,7 @@ class MenuContainer extends Component {
   render() {
     return (
       <Menu
+        title={this.props.title}
         menus={this.props.menus}
         changeMenuState={this.changeMenuState}
         hovered={this.state.hovered}

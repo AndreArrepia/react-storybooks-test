@@ -74,7 +74,7 @@ class Menu extends Component {
       "> .Menu-Shadow-Wrappper": {
         display: "flex",
         width: "100%",
-        boxShadow: "0 3px 3px -3px black",
+        boxShadow: "0 5px 10px 0 rgba(0,0,0,.0785)",
         position: "relative",
         zIndex: "11",
 

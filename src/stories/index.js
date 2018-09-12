@@ -46,10 +46,10 @@ storiesOf("Menu", module)
   ))
   .add("with menus and subMenus", () => (
     <MenuContainer
-      title="Custom title"
+      title="Store"
       menus={[
         {
-          itemName: "Item 1",
+          itemName: "Shoes",
           subItems: [
             {
               title: "Sneakers",
