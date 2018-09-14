@@ -41,7 +41,7 @@ class Submenus extends Component {
 
   buildSubMenus(subMenu, key) {
     return (
-      <Link href={subMenu.link}>
+      <Link href={`${subMenu.link}`}>
         <li key={key}>{subMenu.title}</li>
       </Link>
     );

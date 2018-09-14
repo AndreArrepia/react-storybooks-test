@@ -1,30 +1,32 @@
 import { Provider } from "react-fela";
 import { createRenderer } from "fela";
-import MenuContainer from "../src/components/containers/MenuContainer";
+import LayoutContainer from "../src/components/containers/LayoutContainer";
 
 const About = () => {
   const renderer = createRenderer();
+  const menus = [
+    {
+      itemName: "Main",
+      subItems: [
+        {
+          title: "Index",
+          link: "/"
+        }
+      ]
+    },
+    { itemName: "Item 2" },
+    { itemName: "Item 3" }
+  ];
+
   return (
     <div>
-      <Provider renderer={renderer}>
-        <MenuContainer
-          title="First App"
-          menus={[
-            {
-              itemName: "Main",
-              subItems: [
-                {
-                  title: "Index",
-                  link: "/"
-                }
-              ]
-            },
-            { itemName: "Item 2" },
-            { itemName: "Item 3" }
-          ]}
-        />
-      </Provider>
-      <p>This is the about page</p>
+      <div>
+        <Provider renderer={renderer}>
+          <LayoutContainer title="First App" menus={menus}>
+            <p>About Page Mon!</p>
+          </LayoutContainer>
+        </Provider>
+      </div>
     </div>
   );
 };

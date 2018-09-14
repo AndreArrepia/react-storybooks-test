@@ -10,23 +10,8 @@ class LayoutContainer extends Component {
   render() {
     return (
       <div>
-        <MenuContainer
-          title="First App"
-          menus={[
-            {
-              itemName: "Main",
-              subItems: [
-                {
-                  title: "About",
-                  link: "/about"
-                }
-              ]
-            },
-            { itemName: "Item 2" },
-            { itemName: "Item 3" }
-          ]}
-        />
-        {this.props.element}
+        <MenuContainer title={this.props.title} menus={this.props.menus} />
+        {this.props.children}
       </div>
     );
   }
