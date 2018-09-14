@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { createComponent } from "react-fela";
+import Link from "next/link";
 
 class Submenus extends Component {
   constructor() {
@@ -39,11 +40,16 @@ class Submenus extends Component {
   }
 
   buildSubMenus(subMenu, key) {
-    return <li key={key}>{subMenu.title}</li>;
+    return (
+      <Link href={subMenu.link}>
+        <li key={key}>{subMenu.title}</li>
+      </Link>
+    );
   }
 
   render() {
     const rule = () => ({
+      zIndex: "1",
       "> ul": {
         listStyleType: "none",
         color: "white",
